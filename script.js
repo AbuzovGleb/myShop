@@ -1,6 +1,13 @@
 let cart = [];
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 document.addEventListener('DOMContentLoaded', function() {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+    }
 
     addButtonsToCatalog();
 
@@ -9,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     createCart();
 
     createFilters();
+    
+    updateCart();
 });
 
 function addButtonsToCatalog() {
@@ -148,6 +157,7 @@ function updateCart() {
     if (cart.length === 0) {
         cartItems.innerHTML = '<p>Корзина пуста</p>';
         cartTotal.textContent = 'Итого: 0 ₽';
+        saveCart();
         return;
     }
     
@@ -183,6 +193,7 @@ function updateCart() {
     });
     
     cartTotal.textContent = 'Итого: ' + total + ' ₽';
+    saveCart();
 }
 
 // функция подсчета суммы
