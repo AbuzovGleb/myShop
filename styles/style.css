@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(204, 255, 255);
+}
+h1 {
+
+text-align: center;
+
+}
+
+h2, h3 {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+    background-color:aliceblue
+    
+}
+
+ul {
+    list-style-type: none;
+}
+
+#description {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgb(46, 139, 87);
+}
+
+
+
+#info {
+    font-weight: bold;
+    color: rgb(128, 0, 128);
+    list-style-image: url(../images/marker.jpg)
+}
